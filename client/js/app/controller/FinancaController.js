@@ -99,5 +99,7 @@ export class FinancaController {
 
         this._financasView.update(this._listaFinancas)
     }
-
+    
+    filtra() {
+    }
 }
