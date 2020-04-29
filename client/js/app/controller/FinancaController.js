@@ -24,6 +24,8 @@ export class FinancaController {
 
         this._ordemColuna = ""
         this._ordemAtual = ""
+
+        this._filtroItem = ""
     }
 
     get coluna() {
@@ -53,6 +55,8 @@ export class FinancaController {
         this._inputData.value = ""
         this._inputQuantidade.value = ""
         this._inputValor.value = ""
+
+        this._filtroItem = ""
         // this._inputItem.focus()
     }
 
@@ -100,6 +104,15 @@ export class FinancaController {
         this._financasView.update(this._listaFinancas)
     }
     
-    filtra() {
+    filtraLista() {
+        let $ = document.querySelector.bind(document)
+        this._filtroItem = $("#filtro")
+        if (_filtroItem)
+        {
+            evento.preventDefault()
+            this._financasView.update(this._listaFinancas.filtrai(_filtroItem))
+            this._notificacao.texto = _filtroItem  //"Finança filtrada pelo critério " + _filtroItem
+            this._notificacaoView.update(this._notificacao)
+        }
     }
 }

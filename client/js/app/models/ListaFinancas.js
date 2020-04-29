@@ -19,7 +19,11 @@ export class ListaFinancas {
         this._financas.reverse()
     }
 
+    filtrai(criterio) {
+        this._financas.forEach(informacao => filter(informacao => informacao == criterio));
+    }
+
     get financas() {
         return [].concat(this._financas)
-    }
+     }
 }
